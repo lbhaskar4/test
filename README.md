@@ -4,7 +4,7 @@ This issue tracker is a place where Release Managers can discuss the
 release process.
 
 
-Quick links
+## Quick links
 
 [Release tools](https://gitlab.com/gitlab-org/release-tools/)
 
