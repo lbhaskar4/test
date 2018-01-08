@@ -15,7 +15,7 @@ Please remove this notice once you read it.
 (Use issue title in the format of:)
 (YYYY-MM-DD: RELEASE_VERSION exception request for MERGE_REQUEST_REFERENCE)
 
-Merge request in question: gitlab-org/MERGE_REQUEST_REFERENCE
+Merge request to be considered for picking: gitlab-org/MERGE_REQUEST_REFERENCE
 
 ## Why it needs to be picked
 
