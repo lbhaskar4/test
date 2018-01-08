@@ -47,7 +47,7 @@ Check off any features you've tested successfully.
 
 ### Issues raised
 
-Take note of any issues you've created.
+Take note of any issues you've created and check them off as they are resolved.
 
 #### PM_NAME PM_TEAM
 
