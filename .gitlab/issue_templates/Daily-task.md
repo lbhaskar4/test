@@ -104,3 +104,5 @@ QA was completed.)
 (Estimated time spent on deploy tasks.)
 (Start counting from the first time when you wanted to do deploy, until the deploy is complete for each environment.)
 (Write down time from starting the deploy rake task until it finished.)
+
+/label ~"Release task"
