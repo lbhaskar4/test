@@ -13,6 +13,8 @@ something goes wrong!
 
 Release manager will create this issue once the staging deploy is completed
 and ping the whole Product team.
+The product team should fill out the "Features tested" lists
+and assign them to members of the Product team.
 
 RELEASE_VERSION can be an RC as well, eg. 10.4.0.rc1, 10.4.0, 10.4.1.
 
@@ -27,10 +29,27 @@ Please remove this notice once you read it.
 
 General Quality info can be found at the [Quality Handbook](https://about.gitlab.com/handbook/quality/).
 
-(For each Product Manager, add a separate section. Product
-Managers should fill in the details of the tests they conducted.)
+You can use the [QA Checklist](https://gitlab.com/gitlab-org/release-tools/blob/master/doc/qa-checklist.md)
+to ensure you've tested critical features.
 
-### PM_NAME PM_TEAM
+(For each Product Manager, add a separate section. Product
+Managers should fill in the details of the tests they conducted and any issues
+they've created relating to testing e.g. bugs or regressions.)
+
+### Features tested
+
+Check off any features you've tested successfully.
+
+#### PM_NAME PM_TEAM
 
 - [ ] Tested FEATURE_1
 - [ ] Tested FEATURE_2
+
+### Issues raised
+
+Take note of any issues you've created.
+
+#### PM_NAME PM_TEAM
+
+- [ ] Found ISSUE_1
+- [ ] Opened ISSUE_2
