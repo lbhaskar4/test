@@ -24,6 +24,10 @@ YYYY-MM-DD: RELEASE_VERSION QA task
 Any item inside of () should be removed before the issue is closed.
 Please remove this notice once you read it.
 ------
+## Deadline
+
+QA testing on staging.gitlab.com should be completed by **(YYYY-MM-DD HH:MM UTC)**.
+After this deadline has passed, we will proceed with production deployment.
 
 ## Tasks
 
@@ -53,3 +57,5 @@ Take note of any issues you've created and check them off as they are resolved.
 
 - [ ] Found ISSUE_1
 - [ ] Opened ISSUE_2
+
+/label "QA task"
