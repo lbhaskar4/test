@@ -24,7 +24,7 @@ Merge request to be considered for picking: gitlab-org/MERGE_REQUEST_REFERENCE
 ## Potential negative impact of picking
 
 (Explain what could be go wrong with the release if the MR is picked and include
-an estimate on the potential number of users affected by any negative impact.)
+an estimate of the potential number of users affected by any negative impact.)
 
 ## Sign-off
 
