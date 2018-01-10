@@ -58,4 +58,9 @@ Take note of any issues you've created and check them off as they are resolved.
 - [ ] Found ISSUE_1
 - [ ] Opened ISSUE_2
 
+
+### Automated QA
+
+(Please link to a snippet of the results of the [gitlab-qa](https://gitlab.com/gitlab-org/gitlab-qa) automated QA test)
+
 /label "QA task"
