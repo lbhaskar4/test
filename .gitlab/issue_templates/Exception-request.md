@@ -31,3 +31,5 @@ an estimate of the potential number of users affected by any negative impact.)
 - [ ] Release manager: @[RELEASE_MANAGER_USERNAME]
 - [ ] Engineering lead: @[ENGINEERING_LEAD_USERNAME]
 - [ ] Engineering director: @[VP_OF_ENGINEERING_OR_CTO_USERNAME]
+- 
+/label ~"Exception request"
