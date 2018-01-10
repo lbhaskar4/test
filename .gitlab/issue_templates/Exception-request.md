@@ -5,7 +5,7 @@ This issue should be used to request that your MR be merged into an imminent RC 
 Please read the ["Asking for an exception" docs](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/PROCESS.md#asking-for-an-exception).
 
 RELEASE_VERSION should include an RC as well, eg. 10.4.0.rc1, 10.4.0, 10.4.1.
-MERGE_REQUEST_REFERENCE should include the project name, eg. gitlab-ce!123, gitlab-ee!321.
+MERGE_REQUEST_REFERENCE should include the project namespace and name, eg. gitlab-org/gitlab-ce!123, gitlab-org/gitlab-ee!321.
 
 Any item inside of () should be removed before the issue is closed.
 Please remove this notice once you read it.
@@ -15,7 +15,7 @@ Please remove this notice once you read it.
 (Use issue title in the format of:)
 (YYYY-MM-DD: RELEASE_VERSION exception request for MERGE_REQUEST_REFERENCE)
 
-Merge request to be considered for picking: gitlab-org/MERGE_REQUEST_REFERENCE
+Merge request to be considered for picking: MERGE_REQUEST_REFERENCE
 
 ## Why it needs to be picked
 
@@ -31,5 +31,3 @@ an estimate of the potential number of users affected by any negative impact.)
 - [ ] Release manager: @[RELEASE_MANAGER_USERNAME]
 - [ ] Engineering lead: @[ENGINEERING_LEAD_USERNAME]
 - [ ] Engineering director: @[VP_OF_ENGINEERING_OR_CTO_USERNAME]
-- 
-/label ~"Exception request"
