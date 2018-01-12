@@ -39,6 +39,7 @@ Please remove this notice once you read it.
 - [ ] Deploy RELEASE_VERSION to staging.gitlab.com (link optional)
 - [ ] Deploy RELEASE_VERSION to canary.gitlab.com (link optional)
 - [ ] Deploy RELEASE_VERSION to gitlab.com (link optional)
+- [ ] Request application of a [post-deployment patch](https://gitlab.com/gitlab-com/infrastructure/issues/3545)
 
 
 ## Escalations
