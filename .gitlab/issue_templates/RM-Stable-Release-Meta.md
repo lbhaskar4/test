@@ -17,8 +17,11 @@ version you are working on.
 Issues relating to the preparation of a Release Candidate should be created 
 separately and linked in this issue.
 
-For now, release candidate issues should be created using the Release Candidate 
-issue template (.gitlab/issue_templates/Release-Candidate.md)
+Release Candidate issues should be created using `release-tools`:
+
+```
+bundle exec rake rc_issue[10.5.0-rc1]
+```
 
 ## Exception requests
 
