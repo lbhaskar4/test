@@ -4,7 +4,7 @@ An RM will create this issue once a staging deploy is completed,
 please use the "RC1 QA Task" template if the deployed version was the first release candidate of
 a new major version.
 
-An RM should create the ["Changes tested" task list](#changes-tested) to mention the maintainers responsbile for each commit since the last release so they can delegate testing.
+An RM should create the ["Changes tested" task list](#changes-tested) to mention the maintainers responsible for each commit since the last release so they can delegate testing.
 
 You can use the following oneliner to get started, but you will need to mention the maintainers manually until there is a tool for this. ```git log PREVIOUS_TAG-ee..LATEST_TAG-ee --pretty=format:"- [ ] [%h](https://gitlab.com/gitlab-org/gitlab-ee/commit/%h) @%aN \`%s\`"```
 
