@@ -14,7 +14,7 @@ Please remove this notice before posting.
 
 ## Deadline
 
-QA testing on staging.gitlab.com should be completed by **YYYY-MM-DD HH:MM UTC**.
+QA testing on [staging.gitlab.com](https://staging.gitlab.com) should be completed by **YYYY-MM-DD HH:MM UTC**.
 After this deadline has passed, RMs will proceed with the production deployment.
 
 ## Tasks
