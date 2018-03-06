@@ -8,17 +8,20 @@ Make a note of your `GitLab.com`, `dev.gitlab.org` and `github` usernames and ad
 |:---------------|:---------|
 | Gitlab.com     |          |
 | dev.gitlab.org |          |
-| github         |          |
+| github.com     |          |
 
 ### Access request
 
-- [ ] Master access on gitlab-ce  (dev and com)
-- [ ] Master access on gitlab-ee (dev and com)
-- [ ] Master access on gitlab-omnibus (dev and com)
-- [ ] Get added to the [Release Managers team](https://github.com/orgs/gitlabhq/teams/release-managers) on GitHub.
+- [ ] Master membership in the [gitlab-org/release/managers] group
+- [ ] Master membership in the [gitlab/release/managers] group
+- [ ] Membership in the [gitlabhq/release-managers] team on GitHub.
 - [ ] Make sure you have VPN access (follow instructions from [creating client certificate](https://gitlab.com/gitlab-cookbooks/gitlab_openvpn#how-to-create-a-client-certificate)
       up to and including google authenticator setup), and test by bringing VPN up and sshing into staging sidekiq node (`sidekiq-asap-01.sv.stg.gitlab.com`)
 - [ ] Use the [release manager infrastructure permissions template](https://gitlab.com/gitlab-org/release-tools/blob/master/doc/release-manager.md#infrastructure-permissions-template) to request chef and SSH access: [link to infrastructure issue]
+
+[gitlab-org/release/managers]: https://gitlab.com/groups/gitlab-org/release/managers
+[gitlab/release/managers]: https://dev.gitlab.org/groups/gitlab/release/managers
+[gitlabhq/release-managers]: https://github.com/orgs/gitlabhq/teams/release-managers
 
 ### Tool setup
 
@@ -26,7 +29,6 @@ Make a note of your `GitLab.com`, `dev.gitlab.org` and `github` usernames and ad
 - [ ] Make sure you have [release-tools](https://gitlab.com/gitlab-org/release-tools) cloned locally, and [set it up](https://gitlab.com/gitlab-org/release-tools/blob/master/doc/rake-tasks.md#setup)
 - [ ] If your ssh key has a passphrase, you will want to do `ssh-add` in your local takeoff repo
 - [ ] Read through the [release guides](https://gitlab.com/gitlab-org/release-tools/blob/master/README.md#guides)
-
 
 ### First Tasks
 
