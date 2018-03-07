@@ -3,6 +3,8 @@
 Trainee: `your_username`
 Release Manager: Previous Release Manager in your timezone. See https://about.gitlab.com/release-managers/ for details
 
+- [ ] Trainee: Assign yourself and the Release Manager to this issue.
+
 ### Usernames
 
 Trainee: Make a note of your `GitLab.com`, `dev.gitlab.org` and `github` usernames and add them to this issue.
@@ -22,7 +24,7 @@ Trainee: Make a note of your `GitLab.com`, `dev.gitlab.org` and `github` usernam
 
 - [ ] Release Manager: Ensure trainee gets add to the [Release Managers team](https://github.com/orgs/gitlabhq/teams/release-managers) on GitHub
 
-- [ ] Trainee: Create a [new infrastructure permissions issue](https://gitlab.com/gitlab-com/infrastructure/issues/new?issue%5Btitle%5D=Chef%20and%20SSH%20access%20request%20for%20YOUR%20NAME) using the template above as a description. Make sure to set the issue to **confidential** and include your SSH username and public key. Once you finished, replace the following with your issue link: `<INFRASTRUCTURE_ISSUE_LINK>`
+- [ ] Trainee: Create a [new infrastructure permissions issue](https://gitlab.com/gitlab-com/infrastructure/issues/new?issue%5Btitle%5D=Chef%20and%20SSH%20access%20request%20for%20YOUR%20NAME) using the template below as a description. Make sure to set the issue to **confidential** and include your SSH username and public key. Once you finished, replace the following with your issue link: `<INFRASTRUCTURE_ISSUE_LINK>`
 
 ```
 ## What
@@ -68,7 +70,7 @@ Trainee: Ensure you have completed all the steps on `Access Request` before doin
 
 - [ ] Trainee: Join #releases on Slack
 - [ ] Trainee: Read through the [release guides](https://gitlab.com/gitlab-org/release/docs/blob/master/README.md)
-- [ ] Trainee: Read the deploy docs: https://gitlab.com/gitlab-org/takeoff#deploying-gitlab
+- [ ] Trainee: Read the deploy [docs](https://gitlab.com/gitlab-org/takeoff#deploying-gitlab)
 - [ ] Trainee: Be involved in the merge/pick to stable for at least one RC/Patch
 - [ ] Trainee: Perform the ce-to-ee merge at least once for a RC/Patch
 - [ ] Trainee: Tag the release for at least one RC/patch
