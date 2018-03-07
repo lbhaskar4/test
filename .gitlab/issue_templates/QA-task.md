@@ -29,7 +29,7 @@ After this deadline has passed, RMs will proceed with the production deployment.
 
 General Quality info can be found at the [Quality Handbook](https://about.gitlab.com/handbook/quality/).
 
-You can use the [QA Checklist](https://gitlab.com/gitlab-org/release-tools/blob/master/doc/qa-checklist.md)
+You can use the [QA Checklist](https://gitlab.com/gitlab-org/release/docs/blob/master/general/qa-checklist.md)
 to ensure you've tested critical features.
 
 > For each PM, add a separate section. PMs should fill in the details of the
