@@ -1,14 +1,12 @@
-# Read me first and remove after you read!
+<!--
+# Read me first
 
 This issue should be used to request that your MR be merged into an imminent RC as an exception.
 
 Please read the ["Asking for an exception" docs](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/PROCESS.md#asking-for-an-exception).
 
-
 Any item inside of () should be removed before the issue is closed.
-Please remove this notice once you read it.
-
-------
+-->
 
 # Exception request
 

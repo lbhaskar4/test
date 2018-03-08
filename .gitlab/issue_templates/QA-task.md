@@ -1,3 +1,4 @@
+<!--
 # Read me first!
 
 An RM will create this issue once a staging deploy is completed,
@@ -15,10 +16,7 @@ The [deadline](#deadline) should be set to **12** hours after the completion of 
 Set the issue title to: `YYYY-MM-DD: RELEASE_VERSION QA task`
 
 **Set the issue as confidential if this is a security release**
-
-Please remove this notice before posting.
-
-------
+-->
 
 ## Deadline
 
