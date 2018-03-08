@@ -1,3 +1,4 @@
+<!--
 # Read me first!
 
 An RM will create this issue once an RC1 staging deploy is completed.
@@ -7,10 +8,7 @@ PMs will then take ownership of the process by filling out the
 The [deadline](#deadline) should be set to **24** hours after the completion of the deploy.
 
 Set the issue title to: `YYYY-MM-DD: RELEASE_MAJOR_VERSION.rc1 QA task`
-
-Please remove this notice before posting.
-
-------
+-->
 
 ## Deadline
 
