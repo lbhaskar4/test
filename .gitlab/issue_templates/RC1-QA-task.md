@@ -22,27 +22,26 @@ General Quality info can be found at the [Quality Handbook](https://about.gitlab
 You can use the [QA Checklist](https://gitlab.com/gitlab-org/release/docs/blob/master/general/qa-checklist.md)
 to ensure you've tested critical features.
 
-> For each PM, add a separate section. PMs should fill in the details of the
-tests they conducted and any issues they've created relating to testing e.g. bugs or regressions.
+1. List features that need to be tested, with a link to the related issue.
+1. Check off any feature you've tested successfully. 
+1. If a problem is found, update the item adding the link to the related issue, and the severity of it
+1. Check them off as they are resolved
 
-### Features tested
+Example:
 
-Check off any features you've tested successfully.
+> 1. [x] Awesome new feature: https://gitlab.com/gitlab-org/gitlab-ce/issues/...
+> 2. [x] Another cool feature: https://gitlab.com/gitlab-org/gitlab-ce/issues/...
+>   - [ ] Found critical issue: https://gitlab.com/gitlab-org/gitlab-ce/issues/...
+>   - [ ] Found minor issue: https://gitlab.com/gitlab-org/gitlab-ce/issues/...
+> 3. [ ] This is a EE feature: https://gitlab.com/gitlab-org/gitlab-ee/issues/...
 
-#### PM_NAME PM_TEAM
+### Tested Features
 
-- [ ] Tested FEATURE_1
-- [ ] Tested FEATURE_2
+Create one section for each team and the PM doing the test.
 
-### Issues raised
+#### PM handle - Team name
 
-Take note of any issues you've created and check them off as they are resolved.
-
-#### PM_NAME PM_TEAM
-
-- [ ] Found ISSUE_1
-- [ ] Opened ISSUE_2
-
+1. [ ] feature: issue
 
 ### Automated QA
 
