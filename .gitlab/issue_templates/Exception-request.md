@@ -38,4 +38,8 @@ Merge request to be considered for picking: MERGE_REQUEST_REFERENCE
 - [ ] Engineering lead: @[ENGINEERING_LEAD_USERNAME]
 - [ ] Engineering director: @[ENGINEERING_DIRECTOR_USERNAME]
 
+**Note**: if you are the _last_ person to sign off, or about to close this
+issue, please check that MERGE_REQUEST_REFERENCE has the correct milestone and
+label set so that the release managers will pick it.
+
 /label ~"Exception request"
