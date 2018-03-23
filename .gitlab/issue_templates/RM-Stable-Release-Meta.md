@@ -19,7 +19,7 @@ separately and linked in this issue.
 Release Candidate issues should be created using `release-tools`:
 
 ```
-bundle exec rake rc_issue[10.5.0-rc1]
+bundle exec rake patch_issue[10.5.0-rc1]
 ```
 
 ## Exception requests
