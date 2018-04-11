@@ -50,4 +50,14 @@ Take note of any issues you've created and check them off as they are resolved.
 
 > Please link to a snippet of the results of the [gitlab-qa](https://gitlab.com/gitlab-org/gitlab-qa) automated QA test
 
+Run
+
+```sh
+GITLAB_USERNAME=your_username GITLAB_PASSWORD=your_password gitlab-qa Test::Instance::Any EE latest https://staging.gitlab.com
+```
+
+The credentials are in 1password, look for `GitLab QA`
+
+- [ ] [QA Result](LINK_TO_SNIPPET)
+
 /label "QA task"
