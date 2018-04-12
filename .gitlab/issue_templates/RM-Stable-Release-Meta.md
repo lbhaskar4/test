@@ -10,6 +10,12 @@ and exception requests.
 - [ ] Create the `Pick into X.X` group label if it doesn't exist: https://gitlab.com/groups/gitlab-org/labels/new
   * Note: Replace `X.X` with the version you are working on.
 - [ ] Create a new issue for the preparation of each release candidate
+- Follow the initial steps for [creating the first RC](https://gitlab.com/gitlab-org/release/docs/blob/master/general/release-candidates.md#creating-rc1):
+- [ ] Create an MR on **CE** master updating the "Installation from Source" guide, creating the "Update" guides
+- [ ] Create an MR on **EE** master creating the "CE to EE" guides
+- [ ] Create an MR on **CE** master updating the `.gitignore`, `.gitlab-ci.yml`, and `Dockerfile` templates
+- [ ] Create an MR on **CE** master updating the dependencies license list
+- [ ] Ensure the above MRs are merged prior to creating the RCs
 
 ## Individual Release Candidate preparation issues
 
