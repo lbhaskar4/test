@@ -16,7 +16,7 @@ Any item inside of () should be removed before the issue is closed.
 (MERGE_REQUEST_REFERENCE should include the project name, eg. gitlab-org/gitlab-ce!123, gitlab-org/gitlab-ee!321.
 )
 
-Merge request to be considered for picking: MERGE_REQUEST_REFERENCE
+- Merge request to be considered for picking: MERGE_REQUEST_REFERENCE
 
 ## Why it needs to be picked
 
@@ -39,7 +39,10 @@ Merge request to be considered for picking: MERGE_REQUEST_REFERENCE
 - [ ] Engineering director: @[ENGINEERING_DIRECTOR_USERNAME]
 
 **Note**: if you are the _last_ person to sign off, or about to close this
-issue, please check that MERGE_REQUEST_REFERENCE has the correct milestone and
+issue, please check that:
+  - [ ] MERGE_REQUEST_REFERENCE has the correct milestone and
 label set so that the release managers will pick it.
+  - [ ] MERGE_REQUEST_REFERENCE has a comment with a link to this issue:
+    - Exception approved in ISSUE_LINK
 
 /label ~"Exception request"
