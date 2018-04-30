@@ -34,15 +34,23 @@ Any item inside of () should be removed before the issue is closed.
 
 ## Sign-off
 
+The following need to provide initial approval for this exception request:
+
 - [ ] Release manager: @[RELEASE_MANAGER_USERNAME]
 - [ ] Engineering lead: @[ENGINEERING_LEAD_USERNAME]
 - [ ] Engineering director: @[ENGINEERING_DIRECTOR_USERNAME]
 
-**Note**: if you are the _last_ person to sign off, or about to close this
-issue, please check that:
-  - [ ] MERGE_REQUEST_REFERENCE has the correct milestone and
+If you are the last person to provide initial approval, assign this issue to the
+VPE for his approval:
+
+- [ ] VPE: @edjdev
+
+After the VPE approves, check that the following is accurate before closing this
+issue:
+
+- [ ] MERGE_REQUEST_REFERENCE has the correct milestone and
 label set so that the release managers will pick it.
-  - [ ] MERGE_REQUEST_REFERENCE has a comment with a link to this issue:
+- [ ] MERGE_REQUEST_REFERENCE has a comment with a link to this issue:
     - Exception approved in ISSUE_LINK
 
 /label ~"Exception request"
