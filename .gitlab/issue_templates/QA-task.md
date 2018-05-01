@@ -15,6 +15,8 @@ The [deadline](#deadline) should be set to **12** hours after the completion of 
 
 Set the issue title to: `YYYY-MM-DD: RELEASE_VERSION QA task`
 
+If this is a security release add the word "Security"  before `RELEASE_VERSION`. `YYYY-MM-DD: Security RELEASE_VERSION QA task`
+
 **Set the issue as confidential if this is a security release**
 -->
 
@@ -48,7 +50,8 @@ Take note of any issues you've created and check them off as they are resolved.
 
 ### Automated QA
 
-> Please link to a snippet of the results of the [gitlab-qa](https://gitlab.com/gitlab-org/gitlab-qa) automated QA test
+#### Current version
+> Please post the results of the [gitlab-qa](https://gitlab.com/gitlab-org/gitlab-qa) automated QA test below
 
 Run
 
@@ -58,6 +61,28 @@ GITLAB_USERNAME=your_username GITLAB_PASSWORD=your_password gitlab-qa Test::Inst
 
 The credentials are in 1password, look for `GitLab QA`
 
-- [ ] [QA Result](LINK_TO_SNIPPET)
+**QA Result**
+```sh
+Post the result of the test run here
+```
+
+#### Back-port version x.x
+
+If it is confirmed that we are releasing back-ported versions of GitLab we should also run automated tests on those versions as well. Copy this section down for every version we are releasing. Otherwise this section can be ignored / deleted.
+
+> Please post the results of the [gitlab-qa](https://gitlab.com/gitlab-org/gitlab-qa) automated QA test below
+
+Run
+
+```sh
+GITLAB_USERNAME=your_username GITLAB_PASSWORD=your_password gitlab-qa Test::Instance::Any EE vX.Y.Z https://replace-this-with-the-backport-deployment-url
+```
+
+The credentials are in 1password, look for `GitLab QA`
+
+**QA Result**
+```sh
+Post the result of the test run here
+```
 
 /label "QA task"
