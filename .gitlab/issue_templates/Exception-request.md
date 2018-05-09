@@ -37,8 +37,9 @@ Any item inside of () should be removed before the issue is closed.
 The following need to provide initial approval for this exception request:
 
 - [ ] Release manager: @[RELEASE_MANAGER_USERNAME]
-- [ ] Engineering lead: @[ENGINEERING_LEAD_USERNAME]
-- [ ] Engineering director: @[ENGINEERING_DIRECTOR_USERNAME]
+- [ ] Engineering team leader: @[ENGINEERING_LEAD_USERNAME]
+- [ ] Engineering department leader (if different from team leader): @[ENGINEERING_DEPT_USERNAME]
+- [ ] Quality leader: @[QUALITY_LEAD__USERNAME]
 
 If you are the last person to provide initial approval, assign this issue to the
 VPE for his approval:
