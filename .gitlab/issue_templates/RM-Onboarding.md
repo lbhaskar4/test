@@ -45,6 +45,8 @@ Onboarding task: LINK_TO_ONBOARING_ISSUE
 
 ### Username
 
+This should be your local POSIX user (you can check it by running `whoami` from a terminal)
+
 \```
 YOUR_SSH_USER_NAME
 \```
