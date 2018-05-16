@@ -1,9 +1,9 @@
 <!--
 # Read me first!
 
-An RM will create this issue once a staging deploy is completed,
+A Release Manager will create this issue once a staging deploy is completed,
 
-An RM should create the ["Changes tested" task list](#changes-tested) to mention the maintainers responsible for each commit since the last release so they can delegate testing.
+A Release Manager should create the ["Changes tested" task list](#changes-tested) to mention the maintainers responsible for each commit since the last release so they can delegate testing.
 
 You can use the following oneliner to get started, but you will need to mention the maintainers manually until there is a tool for this. ```git log PREVIOUS_TAG-ee..LATEST_TAG-ee --pretty=format:"- [ ] [%h](https://gitlab.com/gitlab-org/gitlab-ee/commit/%h) @%aN \`%s\`"```
 
@@ -21,7 +21,7 @@ If this is a security release add the word "Security"  before `RELEASE_VERSION`.
 ## Deadline
 
 QA testing on staging.gitlab.com should be completed by **YYYY-MM-DD HH:MM UTC**.
-After this deadline has passed, RMs will proceed with the production deployment.
+After this deadline has passed, Release Managers will proceed with the production deployment.
 
 ## Tasks
 
