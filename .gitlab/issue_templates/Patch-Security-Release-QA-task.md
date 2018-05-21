@@ -48,13 +48,13 @@ Take note of any issues you've created and check them off as they are resolved.
 
 ## Automated QA
 
-For Quality Engineers, for every release versions run Gitlab QA on staging and post the results 
+For Quality Engineers, for every release versions run Gitlab QA on staging and post the results. 
 
-Please post the results of the [gitlab-qa](https://gitlab.com/gitlab-org/gitlab-qa) automated QA test below
+Please post the results of the [gitlab-qa](https://gitlab.com/gitlab-org/gitlab-qa) automated QA tests below.
 
-The credentials are in 1password, look for `GitLab QA`
+The credentials are in 1Password, look for `GitLab QA`.
 
-### Automated QA Result Current version
+### Automated QA Result Current version RELEASE_VERSION
 
 Run
 
@@ -66,7 +66,7 @@ GITLAB_USERNAME=your_username GITLAB_PASSWORD=your_password gitlab-qa Test::Inst
 Post the result of the test run here
 ```
 
-### Automated QA Result Back-port version x.x
+### Automated QA Result Back-port version BACKPORT_VERSION
 
 If it is confirmed that we are releasing back-ported versions of GitLab we should also run automated tests on those versions as well. Copy this section down for every version we are releasing. Otherwise this section can be ignored / deleted.
 
