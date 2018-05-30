@@ -6,7 +6,9 @@ Set the issue title to: `RELEASE_MAJOR_VERSION RC# QA task`
 
 A Release Manager will fill out the ["Feature assurance" list](#feature-assurance) and the responsible Product Manager.
 
-The [deadline](#deadline) to which a release candidate moves on from staging environment is set to **24** hours after the completion of the deploy.
+The [deadline](#deadline) is the time given before a release candidate moves on after deploying to staging.
+* For the 1st Release Candidate: 24 hours (1 working day).
+* For subsequent Release Candidates: 12 hours.
 
 Updating the issue with subsequent RCs: this issue is to be updated whenever a new release candidate has been deployed.
 
@@ -19,7 +21,11 @@ A Quality Engineer will assist in running the [Automated QA](#automated-qa).
 
 ## Deadline
 
-> **Note:** For Release Managers, for every new release candidates, update the time here to reflect the latest deploy. 
+* The deadline to which the first release candidate (RC1) moves on from staging environment is **24** hours after the completion each deploy to staging.
+* The deadline to which subsequent release candidates moves on from staging environment is **12** hours after the completion each deploy to staging.
+* The deadline to which the QA Task is closed out is **24** hours (1 working day) after the final deploy to production.
+
+> **Note:** For Release Managers, for every new release candidate, update the time here to reflect the latest release candidate deploy. 
 
 QA testing on [staging.gitlab.com](https://staging.gitlab.com) should be completed by **YYYY-MM-DD HH:MM UTC**.
 After this deadline has passed, Release Managers will proceed with the production deployment.
