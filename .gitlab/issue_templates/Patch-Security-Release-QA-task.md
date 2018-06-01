@@ -1,17 +1,15 @@
 <!--
 # Read me first!
 
-An RM will create this issue once a staging deploy is completed,
-please use the "RC1 QA Task" template if the deployed version was the first release candidate of
-a new major version.
+A Release Manager will create this issue once a staging deploy is completed.
 
-An RM should create the ["Changes tested" task list](#changes-tested) to mention the maintainers responsible for each commit since the last release so they can delegate testing.
+A Release Manager should create the ["Changes tested" task list](#changes-tested) to mention the maintainers responsible for each commit since the last release so they can delegate testing.
 
 You can use the following oneliner to get started, but you will need to mention the maintainers manually until there is a tool for this. ```git log PREVIOUS_TAG-ee..LATEST_TAG-ee --pretty=format:"- [ ] [%h](https://gitlab.com/gitlab-org/gitlab-ee/commit/%h) @%aN \`%s\`"```
 
 The [deadline](#deadline) should be set to **12** hours after the completion of the deploy.
 
-`RELEASE_VERSION` can be an RC as well. eg. `10.4.0.rc1`, `10.4.0`, `10.4.1`.
+`RELEASE_VERSION` eg. `10.3.2`, `10.4.1`.
 
 Set the issue title to: `YYYY-MM-DD: RELEASE_VERSION QA task`
 
@@ -22,8 +20,11 @@ If this is a security release add the word "Security"  before `RELEASE_VERSION`.
 
 ## Deadline
 
+* The deadline to which the release moves on from staging environment is **12** hours after the completion each deploy to staging.
+* The deadline to which the QA Task is closed out is **24** hours (1 working day) after the deploy to production.
+
 QA testing on staging.gitlab.com should be completed by **YYYY-MM-DD HH:MM UTC**.
-After this deadline has passed, RMs will proceed with the production deployment.
+After this deadline has passed, Release Managers will proceed with the production deployment.
 
 ## Tasks
 
@@ -48,10 +49,15 @@ Take note of any issues you've created and check them off as they are resolved.
 - [ ] Found ISSUE_1
 - [ ] Opened ISSUE_2
 
-### Automated QA
+## Automated QA
 
-#### Current version
-> Please post the results of the [gitlab-qa](https://gitlab.com/gitlab-org/gitlab-qa) automated QA test below
+For Quality Engineers, for every release versions run Gitlab QA on staging and post the results. 
+
+Please post the results of the [gitlab-qa](https://gitlab.com/gitlab-org/gitlab-qa) automated QA tests below.
+
+The credentials are in 1Password, look for `GitLab QA`.
+
+### Automated QA Result version RELEASE_VERSION
 
 Run
 
@@ -59,28 +65,14 @@ Run
 GITLAB_USERNAME=your_username GITLAB_PASSWORD=your_password gitlab-qa Test::Instance::Any EE latest https://staging.gitlab.com
 ```
 
-The credentials are in 1password, look for `GitLab QA`
+If this QA task is for a back-ported version, QA should be done in a separate environment. 
 
-**QA Result**
-```sh
-Post the result of the test run here
-```
-
-#### Back-port version x.x
-
-If it is confirmed that we are releasing back-ported versions of GitLab we should also run automated tests on those versions as well. Copy this section down for every version we are releasing. Otherwise this section can be ignored / deleted.
-
-> Please post the results of the [gitlab-qa](https://gitlab.com/gitlab-org/gitlab-qa) automated QA test below
-
-Run
+Use the below command to run the tests.
 
 ```sh
 GITLAB_USERNAME=your_username GITLAB_PASSWORD=your_password gitlab-qa Test::Instance::Any EE vX.Y.Z https://replace-this-with-the-backport-deployment-url
 ```
 
-The credentials are in 1password, look for `GitLab QA`
-
-**QA Result**
 ```sh
 Post the result of the test run here
 ```
