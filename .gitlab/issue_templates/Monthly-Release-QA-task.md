@@ -25,7 +25,7 @@ A Quality Engineer will assist in running the [Automated QA](#automated-qa).
 * The deadline to which subsequent release candidates moves on from staging environment is **12** hours after the completion each deploy to staging.
 * The deadline to which the QA Task is closed out is **24** hours (1 working day) after the final deploy to production.
 
-> **Note:** For Release Managers, for every new release candidate, update the time here to reflect the latest release candidate deploy. 
+> **Note:** For Release Managers, for every new release candidate, update the time here to reflect the latest release candidate deploy.
 
 QA testing on [staging.gitlab.com](https://staging.gitlab.com) should be completed by **YYYY-MM-DD HH:MM UTC**.
 After this deadline has passed, Release Managers will proceed with the production deployment.
@@ -56,9 +56,9 @@ Create one section for each team and the PM doing the test. The information here
 
 #### PM handle - Team name
 
-* [ ] Feature: Issue 
+* [ ] Feature: Issue
 
-### Bugs & Changes tested 
+### Bugs & Changes tested
 
 Check off any features you've tested successfully and note any issues you've created and check them off as they are resolved.
 
@@ -78,19 +78,27 @@ If there are regressions please raise them in the discussion and add an entry fo
 
 ## Automated QA
 
-> **Note:** For Quality Engineers, for every release versions run Gitlab QA on staging and post the results. 
+> **Note:** For Quality Engineers, for every release versions run Gitlab QA on staging and post the results.
 
 Please post the results of the [gitlab-qa](https://gitlab.com/gitlab-org/gitlab-qa) automated QA tests below.
 
 The credentials are in 1Password, look for `GitLab QA`.
+You'll also need to generate a personal access token for the `GitLab QA` user and
+save it in the `GITLAB_QA_ACCESS_TOKEN` environment variable below.
 
-Run
+Export the following environment variables
 
 ```sh
-GITLAB_USERNAME=your_username GITLAB_PASSWORD=your_password gitlab-qa Test::Instance::Any EE latest https://staging.gitlab.com
+export GITLAB_USERNAME=gitlab-qa GITLAB_PASSWORD=xxx GITLAB_QA_ACCESS_TOKEN=xxx
 ```
 
-### RC1 results 
+and run
+
+```sh
+gitlab-qa Test::Instance::Staging
+```
+
+### RC1 results
 
 ```sh
 Post the result of the test run here
