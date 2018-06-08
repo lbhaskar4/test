@@ -51,26 +51,34 @@ Take note of any issues you've created and check them off as they are resolved.
 
 ## Automated QA
 
-For Quality Engineers, for every release versions run Gitlab QA on staging and post the results. 
+> **Note:** For Quality Engineers, for every release versions run Gitlab QA on staging and post the results.
 
 Please post the results of the [gitlab-qa](https://gitlab.com/gitlab-org/gitlab-qa) automated QA tests below.
 
 The credentials are in 1Password, look for `GitLab QA`.
+You'll also need to generate a personal access token for the `GitLab QA` user and
+save it in the `GITLAB_QA_ACCESS_TOKEN` environment variable below.
+
+Export the following environment variables
+
+```sh
+export GITLAB_USERNAME=gitlab-qa GITLAB_PASSWORD=xxx GITLAB_QA_ACCESS_TOKEN=xxx
+```
 
 ### Automated QA Result version RELEASE_VERSION
 
 Run
 
 ```sh
-GITLAB_USERNAME=your_username GITLAB_PASSWORD=your_password gitlab-qa Test::Instance::Any EE latest https://staging.gitlab.com
+gitlab-qa Test::Instance::Staging
 ```
 
-If this QA task is for a back-ported version, QA should be done in a separate environment. 
+If this QA task is for a back-ported version, QA should be done in a separate environment.
 
 Use the below command to run the tests.
 
 ```sh
-GITLAB_USERNAME=your_username GITLAB_PASSWORD=your_password gitlab-qa Test::Instance::Any EE vX.Y.Z https://replace-this-with-the-backport-deployment-url
+gitlab-qa Test::Instance::Any EE vX.Y.Z https://replace-this-with-the-backport-deployment-url
 ```
 
 ```sh
