@@ -32,6 +32,11 @@ Any item inside of () should be removed before the issue is closed.
 (Include an estimate of the potential number of users affected by any negative impact.)
 (Explain the steps you took to minimize the risk.)
 
+## UX issues that *do not* require an exception request
+* If it’s a S4 Priority and does not require a Backend change.
+
+While it does not require an exception request, it will require a review from a UX team member for sign-off.
+
 ## Sign-off
 
 The following need to provide initial approval for this exception request:
