@@ -4,81 +4,55 @@
 A Release Manager will create this issue once an RC1 staging deploy is completed.
 Set the issue title to: `RELEASE_MAJOR_VERSION RC# QA task`
 
-A Release Manager will fill out the ["Feature assurance" list](#feature-assurance) and the responsible Product Manager.
-
 The [deadline](#deadline) is the time given before a release candidate moves on after deploying to staging.
 * For the 1st Release Candidate: 24 hours (1 working day).
 * For subsequent Release Candidates: 12 hours.
 
-Updating the issue with subsequent RCs: this issue is to be updated whenever a new release candidate has been deployed.
+A Quality Engineer will assist in populating the [Merge Requests tested](#merge-requests-tested) section to include owners of each Merge Requests so they can delegate testing. 
+This is done from the [Release Tools](https://gitlab.com/gitlab-org/release-tools) project. This has to be setup before using the script.
+* Directions on generating the QA task content for a given change are posted here: https://gitlab.com/gitlab-org/release-tools/snippets/1723835
+* The documentation can be found at: https://gitlab.com/gitlab-org/release/docs/blob/master/general/qa-issue-generation.md
 
-A Quality Engineer will assist in updating the ["Bugs & Changes tested" task list](#bugs-changes-tested) to mention the maintainers responsible for each commit since the last release so they can delegate testing.
-
-You can use the following oneliner to get started, but you will need to mention the maintainers explicitly in a comment until there is an automated tool for this. ```git log PREVIOUS_TAG-ee..LATEST_TAG-ee --pretty=format:"- [ ] [%h](https://gitlab.com/gitlab-org/gitlab-ee/commit/%h) @%aN \`%s\`"```
+As a backup, we can also fall back to use the `git` log command for this, but you will need to mention the maintainers explicitly in a comment until there is an automated tool for this. ```git log PREVIOUS_TAG-ee..LATEST_TAG-ee --pretty=format:"- [ ] [%h](https://gitlab.com/gitlab-org/gitlab-ee/commit/%h) @%aN \`%s\`"```
 
 A Quality Engineer will assist in running the [Automated QA](#automated-qa).
 -->
+
+# Release Candidate QA Task
+
+## Process
+A Release manager with the help of a Quality engineer will populate the [Merge Requests tested](#merge-requests-tested) section. The information is taken from our Automated QA task generation script. The documentation can be found at: https://gitlab.com/gitlab-org/release/docs/blob/master/general/qa-issue-generation.md
+
+Each engineer then validates and check off each of their assigned QA task(s). 
+1. Check off each Merge Request changes that you've tested successfully and note any issues you've created and check them off as they are resolved.
+1. If a problem is found, update the item adding the link to the related issue, and the severity of it.
+1. If there are regressions please raise them in the discussion and add an entry for it to be validated in the following RC.
+
+General Quality info can be found at the [Quality Handbook](https://about.gitlab.com/handbook/quality/).
 
 ## Deadline
 
 * The deadline to which the first release candidate (RC1) moves on from staging environment is **24** hours after the completion each deploy to staging.
 * The deadline to which subsequent release candidates moves on from staging environment is **12** hours after the completion each deploy to staging.
-* The deadline to which the QA Task is closed out is **24** hours (1 working day) after the final deploy to production.
 
-> **Note:** For Release Managers, for every new release candidate, update the time here to reflect the latest release candidate deploy.
+> **Note:** For Release Managers, for each release candidate, update the time here to reflect the latest release candidate deploy.
 
 QA testing on [staging.gitlab.com](https://staging.gitlab.com) should be completed by **YYYY-MM-DD HH:MM UTC**.
-After this deadline has passed, Release Managers will proceed with the production deployment.
+After this deadline has passed, Release Managers will proceed with the canary and production deployment.
 
-## Tasks
+## Merge Requests tested in RC(#)
 
-General Quality info can be found at the [Quality Handbook](https://about.gitlab.com/handbook/quality/).
-
-You can use the [QA Checklist](https://gitlab.com/gitlab-org/release/docs/blob/master/general/qa-checklist.md)
-to ensure you've tested critical features.
-
-1. List features that need to be tested, with a link to the related issue.
-1. Check off any feature you've tested successfully.
-1. If a problem is found, update the item adding the link to the related issue, and the severity of it
-1. Check them off as they are resolved
-
-Example:
-
-> 1. [x] Awesome new feature: https://gitlab.com/gitlab-org/gitlab-ce/issues/...
-> 2. [x] Another cool feature: https://gitlab.com/gitlab-org/gitlab-ce/issues/...
->   - [ ] Found critical issue: https://gitlab.com/gitlab-org/gitlab-ce/issues/...
->   - [ ] Found minor issue: https://gitlab.com/gitlab-org/gitlab-ce/issues/...
-> 3. [ ] This is a EE feature: https://gitlab.com/gitlab-org/gitlab-ee/issues/...
-
-### Feature Assurance
-
-Create one section for each team and the PM doing the test. The information here should be copied over from the [kick off document](https://docs.google.com/document/d/1ElPkZ90A8ey_iOkTvUs_ByMlwKK6NAB2VOK5835wYK0/edit).
-
-#### PM handle - Team name
-
-* [ ] Feature: Issue
-
-### Bugs & Changes tested
-
-Check off any features you've tested successfully and note any issues you've created and check them off as they are resolved.
-
-If there are regressions please raise them in the discussion and add an entry for it to be validated in the following RC.
-
-#### RC1
-
-- [ ] Feature update ISSUE_1
-- [ ] Opened Regression ISSUE_2
-
-#### RC#
-
-> Create a new section for each new release candidate, update the section with changes in the release and update the RC# in the issue description
-
-- [ ] Bug fix ISSUE_3
-- [ ] Opened Release Blocking Regression ISSUE_4
+> Example:
+>
+> * [x] `@Engineer1` | Apply notification settings level of bacons to all child bacons ~Discussion ~groups ~subgroups
+> * [x] `@Engineer2` | Resolve "Timeout searching group bacons" ~Discussion ~backend ~bug ~database ~groups ~issues ~performance
+> * [ ] `@Engineer3` | Nonnegative meatball weights in issuable sidebar short ribs ~Deliverable ~Discussion ~backend ~direction ~frontend ~issues
+>   * Found problem, does not work because... [LINK_ISSUE_HERE](https://gitlab.com/gitlab-org/gitlab-ce/issues/)
+> * [ ] `@Engineer4` | Moving rev-list pastrami bacons to Lfs Prosciutto ~Platform ~backend ~lfs
 
 ## Automated QA
 
-> **Note:** For Quality Engineers, for every release versions run Gitlab QA on staging and post the results.
+> **Note:** For Quality Engineers, run Gitlab QA on staging and post the results.
 
 Please post the results of the [gitlab-qa](https://gitlab.com/gitlab-org/gitlab-qa) automated QA tests below.
 
@@ -98,20 +72,11 @@ and run
 gitlab-qa Test::Instance::Staging
 ```
 
-### RC1 results
-
 ```sh
-Post the result of the test run here
+Post the result of the test run here.
 ```
 
-### RC# results
-
-> Create a new section for each new release candidate, update the section with changes in the release and update the RC# in the issue description
-
-```sh
-Post the result of the test run here
-```
-
-/cc @gl-product
+If there are errors, create an "Automation Triage" issue, name it `Automation Triage RELEASE_MAJOR_VERSION RC#` and link it to this issue. 
+In the triage issue include all the detailed test logs and screenshots.
 
 /label "QA task"

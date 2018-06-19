@@ -5,6 +5,7 @@ A Release Manager will create this issue once a Release Task for a monthly relea
 Set the issue title to: `RELEASE_MAJOR_VERSION FA task`
 
 A Release Manager will fill out the ["Feature assurance" list](#feature-assurance) and the responsible Product Manager.
+The information here should be copied over from the [kick off document](https://docs.google.com/document/d/1ElPkZ90A8ey_iOkTvUs_ByMlwKK6NAB2VOK5835wYK0/edit).
 
 -->
 
@@ -20,6 +21,8 @@ Each Product Manager then performs the Feature Assurance task to ensure that eac
 1. If a problem is found, update the item adding the link to the related issue, and the severity of it.
 1. Check them off as they are resolved.
 1. Raise any blockers to the Release Manager and to the Engineering Manager whose team is responsible for delivering the feature.
+
+General Quality info can be found at the [Quality Handbook](https://about.gitlab.com/handbook/quality/).
 
 ## Deadline
 
@@ -42,3 +45,5 @@ Create one section for each team and the PM doing the test.
 
 * [ ] Feature 1: Issue https://gitlab.com/gitlab-org/gitlab-ce/issues/...
 * [ ] Feature 2: Issue https://gitlab.com/gitlab-org/gitlab-ce/issues/...
+
+/cc @gl-product
