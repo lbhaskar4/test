@@ -18,6 +18,10 @@ Any item inside of () should be removed before the issue is closed.
 
 - Merge request to be considered for picking: MERGE_REQUEST_REFERENCE
 
+## What it does
+
+(Link to issue description or explain what the MR does and any background information)
+
 ## Why it needs to be picked
 
 (Explain why it is crucial that the MR is picked.)
