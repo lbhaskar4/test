@@ -18,11 +18,13 @@ A Release manager will populate the [Feature Assurance](#feature-assurance) sect
 Each Product Manager then performs the Feature Assurance task to ensure that each feature being shipped in a given is built correctly and fulfills the product requirement.
 1. List each features that need to be tested, with a link to the related issue.
 1. Check off any feature that you've tested successfully.
-1. If a problem is found, update the item adding the link to the related issue, and the severity of it.
-1. Check them off as they are resolved.
-1. Raise any blockers to the Release Manager and to the Engineering Manager whose team is responsible for delivering the feature.
+1. If a problem is found: 
+  * Create an issue for it and add a sub bullet item under the corresponding validation checklist task. Link the issue there.
+  * Add the severity label as applicable
+  * Raise the problem in the discussion and tag relevant Engineers and Engineering managers. 
+1. Raise any release blockers to the Release Manager and to the Engineering Manager whose team is responsible for delivering the feature.
 
-General Quality info can be found at the [Quality Handbook](https://about.gitlab.com/handbook/quality/).
+General Quality info can be found in the [Quality Handbook](https://about.gitlab.com/handbook/quality/).
 
 ## Deadline
 
