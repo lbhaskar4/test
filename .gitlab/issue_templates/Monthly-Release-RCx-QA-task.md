@@ -1,17 +1,16 @@
 <!--
 # Read me first!
 
-A Release Manager will create this issue once an RC1 staging deploy is completed.
+A Release Manager will create this issue once an RC# staging deploy is completed.
 Set the issue title to: `RELEASE_MAJOR_VERSION RC# QA task`
 
 The [deadline](#deadline) is the time given before a release candidate moves on after deploying to staging.
-* For the 1st Release Candidate: 24 hours (1 working day).
+* For the 1st Release Candidate: 24 hours.
 * For subsequent Release Candidates: 12 hours.
 
 A Quality Engineer will assist in populating the [Merge Requests tested](#merge-requests-tested) section to include owners of each Merge Requests so they can delegate testing. 
 This is done from the [Release Tools](https://gitlab.com/gitlab-org/release-tools) project. This has to be setup before using the script.
-* Directions on generating the QA task content for a given change are posted here: https://gitlab.com/gitlab-org/release-tools/snippets/1723835
-* The documentation can be found at: https://gitlab.com/gitlab-org/release/docs/blob/master/general/qa-issue-generation.md
+* Directions on generating the QA task content for a given change are posted here: https://gitlab.com/gitlab-org/release/docs/blob/master/general/qa-issue-generation.md 
 
 As a backup, we can also fall back to use the `git` log command for this, but you will need to mention the maintainers explicitly in a comment until there is an automated tool for this. ```git log PREVIOUS_TAG-ee..LATEST_TAG-ee --pretty=format:"- [ ] [%h](https://gitlab.com/gitlab-org/gitlab-ee/commit/%h) @%aN \`%s\`"```
 
@@ -21,19 +20,26 @@ A Quality Engineer will assist in running the [Automated QA](#automated-qa).
 # Release Candidate QA Task
 
 ## Process
+
 A Release manager with the help of a Quality engineer will populate the [Merge Requests tested](#merge-requests-tested) section. The information is taken from our Automated QA task generation script. The documentation can be found at: https://gitlab.com/gitlab-org/release/docs/blob/master/general/qa-issue-generation.md
 
-Each engineer then validates and check off each of their assigned QA task(s). 
+Each engineer then validates and checks off each of their assigned QA task(s). 
 1. Check off each Merge Request changes that you've tested successfully and note any issues you've created and check them off as they are resolved.
-1. If a problem is found, update the item adding the link to the related issue, and the severity of it.
-1. If there are regressions please raise them in the discussion and add an entry for it to be validated in the following RC.
+1. If a problem is found: 
+  * Create an issue for it and add a sub bullet item under the corresponding validation checklist task. Link the issue there.
+  * Add the severity label 
+  * Raise the problem in the discussion and tag relevant Engineering and Product managers. 
+1. If a regression is found:
+  * Create an issue for it
+  * Add the severity label and the regression label
+  * Raise the regression in the discussion and tag relevant Engineering and Product managers. 
 
-General Quality info can be found at the [Quality Handbook](https://about.gitlab.com/handbook/quality/).
+General Quality info can be found in the [Quality Handbook](https://about.gitlab.com/handbook/quality/).
 
 ## Deadline
 
-* The deadline to which the first release candidate (RC1) moves on from staging environment is **24** hours after the completion each deploy to staging.
-* The deadline to which subsequent release candidates moves on from staging environment is **12** hours after the completion each deploy to staging.
+* The deadline to which the first release candidate (RC1) moves on from staging environment is **24** hours after the deploy to staging completes.
+* The deadline to which subsequent release candidates moves on from staging environment is **12** hours after the deploy to staging completes.
 
 > **Note:** For Release Managers, for each release candidate, update the time here to reflect the latest release candidate deploy.
 
@@ -70,6 +76,17 @@ and run
 
 ```sh
 gitlab-qa Test::Instance::Staging
+```
+
+**Note:** Until https://gitlab.com/gitlab-org/gitlab-qa/issues/272 is resolved, you'll need to use the workaround described at https://gitlab.com/gitlab-org/gitlab-qa/issues/272#workaround. The workaround doesn't need a `GITLAB_QA_ACCESS_TOKEN` variable 
+
+```
+# Make sure to replace `v11.0.0-rc8-ee` with the version exposed at http://staging.gitlab.com/help
+# In gitlab-ee
+› git checkout v11.0.0-rc8-ee
+› cd qa
+› docker build -t gitlab/gitlab-ee-qa:11.0.0-rc8-ee .
+› gitlab-qa Test::Instance::Any gitlab/gitlab-ee:11.0.0-rc8-ee 11.0.0-rc8-ee https://staging.gitlab.com
 ```
 
 ```sh
