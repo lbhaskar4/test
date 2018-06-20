@@ -7,20 +7,17 @@ Release Manager: Previous Release Manager in your timezone. See https://about.gi
 
 ### Usernames
 
-Trainee: Make a note of your `GitLab.com`, `dev.gitlab.org` and `github` usernames and add them to this issue.
+Trainee: Make a note of your `GitLab.com` and `dev.gitlab.org` usernames and add them to this issue.
 
 |                | Username |
 |:---------------|:---------|
-| Gitlab.com     |          |
+| gitlab.com     |          |
 | dev.gitlab.org |          |
-| github.com     |          |
 
 ### Access request
 
 - [ ] Trainee: Add your information to the [`config/release_managers.yml`](https://gitlab.com/gitlab-org/release-tools/blob/master/config/release_managers.yml)
   file in release-tools and open a merge request, linking to this issue.
-- [ ] Release Manager: Ensure trainee gets added to the [Release Managers team](https://github.com/orgs/gitlabhq/teams/release-managers) on GitHub, either by adding it yourself if you have enough permissions, or asking a [GitHub Maintainer](https://github.com/orgs/gitlabhq/teams/release-managers/members?utf8=%E2%9C%93&query=+role%3Amaintainer) to do it.
-
 - [ ] Trainee: Create a [new infrastructure permissions issue](https://gitlab.com/gitlab-com/infrastructure/issues/new?issue%5Btitle%5D=Chef%20and%20SSH%20access%20request%20for%20YOUR%20NAME) using the template below as a description. Make sure to set the issue to **confidential** and include your SSH username and public key. Once you finished, replace the following with your issue link: `<INFRASTRUCTURE_ISSUE_LINK>`
 
 ```
