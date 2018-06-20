@@ -17,11 +17,8 @@ Trainee: Make a note of your `GitLab.com`, `dev.gitlab.org` and `github` usernam
 
 ### Access request
 
-- Release Manager: Ensure trainee has Master Access to:
-  - [ ] gitlab-ce, for both dev.gitlab and gitlab.com
-  - [ ] gitlab-ee, for both dev.gitlab and gitlab.com
-  - [ ] gitlab-omnibus, for both dev.gitlab and gitlab.com
-
+- [ ] Trainee: Add your information to the [`config/release_managers.yml`](https://gitlab.com/gitlab-org/release-tools/blob/master/config/release_managers.yml)
+  file in release-tools and open a merge request, linking to this issue.
 - [ ] Release Manager: Ensure trainee gets added to the [Release Managers team](https://github.com/orgs/gitlabhq/teams/release-managers) on GitHub, either by adding it yourself if you have enough permissions, or asking a [GitHub Maintainer](https://github.com/orgs/gitlabhq/teams/release-managers/members?utf8=%E2%9C%93&query=+role%3Amaintainer) to do it.
 
 - [ ] Trainee: Create a [new infrastructure permissions issue](https://gitlab.com/gitlab-com/infrastructure/issues/new?issue%5Btitle%5D=Chef%20and%20SSH%20access%20request%20for%20YOUR%20NAME) using the template below as a description. Make sure to set the issue to **confidential** and include your SSH username and public key. Once you finished, replace the following with your issue link: `<INFRASTRUCTURE_ISSUE_LINK>`
