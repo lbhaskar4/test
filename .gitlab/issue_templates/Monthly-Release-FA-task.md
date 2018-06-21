@@ -49,3 +49,5 @@ Create one section for each team and the PM doing the test.
 * [ ] Feature 2: Issue https://gitlab.com/gitlab-org/gitlab-ce/issues/...
 
 /cc @gl-product
+
+/label ~"FA task"

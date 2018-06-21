@@ -96,4 +96,4 @@ Post the result of the test run here.
 If there are errors, create an "Automation Triage" issue, name it `Automation Triage RELEASE_MAJOR_VERSION RC#` and link it to this issue. 
 In the triage issue include all the detailed test logs and screenshots.
 
-/label "QA task"
+/label ~"QA task"
