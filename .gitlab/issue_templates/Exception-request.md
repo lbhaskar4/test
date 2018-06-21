@@ -1,7 +1,7 @@
 <!--
 # Read me first
 
-This issue should be used to request that your MR be merged into an imminent RC as an exception.
+This issue should be used to request that your MR be merged into an imminent RC or patch release as an exception.
 
 Please read the ["Asking for an exception" docs](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/PROCESS.md#asking-for-an-exception).
 
@@ -32,22 +32,41 @@ Any item inside of () should be removed before the issue is closed.
 (Include an estimate of the potential number of users affected by any negative impact.)
 (Explain the steps you took to minimize the risk.)
 
-## Sign-off
+## Release manager sign-off
 
-The following need to provide initial approval for this exception request:
+(Assign this issue to RMs managing this release. See https://about.gitlab.com/release-managers/)
 
-- [ ] Release manager: @[RELEASE_MANAGER_USERNAME]
-- [ ] Engineering team leader: @[ENGINEERING_LEAD_USERNAME]
-- [ ] Engineering department leader (if different from team leader): @[ENGINEERING_DEPT_USERNAME]
-- [ ] Quality leader: @[QUALITY_LEAD__USERNAME]
+The release manager needs to provide initial approval for this exception
+request.
+
+- [ ] Release manager
+
+Mention others as necessary during discussion.
+
+## Sign-off for RC (delete this section if patch release)
+
+Upon initial approval, the release manager will then ping and assign the
+following roles:
+
+- [ ] Engineering team leader
+- [ ] Engineering department leader (if different from team leader)
+- [ ] Quality leader
 
 If you are the last person to provide initial approval, assign this issue to the
 VPE for his approval:
 
-- [ ] VPE: @edjdev
+- [ ] VPE
 
-After the VPE approves, check that the following is accurate before closing this
-issue:
+## Sign-off for patch release (delete this section if RC)
+
+Upon initial approval, the release manager will then ping and assign one more
+role for final approval:
+
+- [ ] Engineering team leader/Engineering department leader/Quality leader/VPE
+
+## After approval
+
+Check that the following is accurate before closing this issue:
 
 - [ ] MERGE_REQUEST_REFERENCE has the correct milestone and
 label set so that the release managers will pick it.
