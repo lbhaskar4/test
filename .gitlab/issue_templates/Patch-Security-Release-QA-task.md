@@ -85,4 +85,4 @@ gitlab-qa Test::Instance::Any EE vX.Y.Z https://replace-this-with-the-backport-d
 Post the result of the test run here
 ```
 
-/label "QA task"
+/label ~"QA task"
