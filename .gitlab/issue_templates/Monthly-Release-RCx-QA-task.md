@@ -5,8 +5,7 @@ A Release Manager will create this issue once an RC# staging deploy is completed
 Set the issue title to: `RELEASE_MAJOR_VERSION RC# QA task`
 
 The [deadline](#deadline) is the time given before a release candidate moves on after deploying to staging.
-* For the 1st Release Candidate: 24 hours.
-* For subsequent Release Candidates: 12 hours.
+See [deadline](#deadline) section for details.
 
 A Quality Engineer will assist in populating the [Merge Requests tested](#merge-requests-tested) section to include owners of each Merge Requests so they can delegate testing. 
 This is done from the [Release Tools](https://gitlab.com/gitlab-org/release-tools) project. This has to be setup before using the script.
