@@ -61,6 +61,7 @@ Trainee: Ensure you have completed all the steps on `Access Request` before doin
 - [ ] Trainee: Make sure you have [takeoff](https://gitlab.com/gitlab-org/takeoff) cloned locally, and [set it up](https://gitlab.com/gitlab-org/takeoff/#getting-started)
 - [ ] Trainee: Make sure you have [release-tools](https://gitlab.com/gitlab-org/release-tools) cloned locally, and [set it up](https://gitlab.com/gitlab-org/release-tools/blob/master/doc/rake-tasks.md#setup)
 - [ ] Trainee: If your ssh key has a passphrase, you will want to do `ssh-add` in your local takeoff repo
+- [ ] Trainee: Make sure you can log in into zoom with Releasa Manager's account. You can find the credentials in 1 password under `Release Managers Zoom`.
 
 ### First Tasks
 
