@@ -57,7 +57,7 @@ YOUR_PUBLIC_KEY
 
 Trainee: Ensure you have completed all the steps on `Access Request` before doing this section.
 
-- [ ] Trainee: Follow instructions from [Create a client certificate](https://gitlab.com/gitlab-cookbooks/gitlab_openvpn#create-a-client-certificate), and test by bringing VPN up and sshing into staging sidekiq node (`sidekiq-asap-01.sv.stg.gitlab.com`)
+- [ ] Trainee: Follow instructions from [Setup your VPN client](https://gitlab.com/gitlab-com/runbooks/blob/master/howto/vpn-access.md#instructions-for-users-requesting-access), and test by bringing VPN up and sshing into staging sidekiq node (`sidekiq-asap-01.sv.stg.gitlab.com`)
 - [ ] Trainee: Make sure you have [takeoff](https://gitlab.com/gitlab-org/takeoff) cloned locally, and [set it up](https://gitlab.com/gitlab-org/takeoff/#getting-started)
 - [ ] Trainee: Make sure you have [release-tools](https://gitlab.com/gitlab-org/release-tools) cloned locally, and [set it up](https://gitlab.com/gitlab-org/release-tools/blob/master/doc/rake-tasks.md#setup)
 - [ ] Trainee: If your ssh key has a passphrase, you will want to do `ssh-add` in your local takeoff repo
