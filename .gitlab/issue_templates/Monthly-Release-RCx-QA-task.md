@@ -7,9 +7,9 @@ Set the issue title to: `RELEASE_MAJOR_VERSION RC# QA task`
 The [deadline](#deadline) is the time given before a release candidate moves on after deploying to staging.
 See [deadline](#deadline) section for details.
 
-A Quality Engineer will assist in populating the [Merge Requests tested](#merge-requests-tested) section to include owners of each Merge Requests so they can delegate testing. 
+A Quality Engineer will assist in populating the [Merge Requests tested](#merge-requests-tested) section to include owners of each Merge Requests so they can delegate testing.
 This is done from the [Release Tools](https://gitlab.com/gitlab-org/release-tools) project. This has to be setup before using the script.
-* Directions on generating the QA task content for a given change are posted here: https://gitlab.com/gitlab-org/release/docs/blob/master/general/qa-issue-generation.md 
+* Directions on generating the QA task content for a given change are posted here: https://gitlab.com/gitlab-org/release/docs/blob/master/general/qa-issue-generation.md
 
 As a backup, we can also fall back to use the `git` log command for this, but you will need to mention the maintainers explicitly in a comment until there is an automated tool for this. ```git log PREVIOUS_TAG-ee..LATEST_TAG-ee --pretty=format:"- [ ] [%h](https://gitlab.com/gitlab-org/gitlab-ee/commit/%h) @%aN \`%s\`"```
 
@@ -22,16 +22,16 @@ A Quality Engineer will assist in running the [Automated QA](#automated-qa).
 
 A Release manager with the help of a Quality engineer will populate the [Merge Requests tested](#merge-requests-tested) section. The information is taken from our Automated QA task generation script. The documentation can be found at: https://gitlab.com/gitlab-org/release/docs/blob/master/general/qa-issue-generation.md
 
-Each engineer then validates and checks off each of their assigned QA task(s). 
+Each engineer then validates and checks off each of their assigned QA task(s).
 1. Check off each Merge Request changes that you've tested successfully and note any issues you've created and check them off as they are resolved.
-1. If a problem is found: 
+1. If a problem is found:
   * Create an issue for it and add a sub bullet item under the corresponding validation checklist task. Link the issue there.
-  * Add the severity label 
-  * Raise the problem in the discussion and tag relevant Engineering and Product managers. 
+  * Add the severity label
+  * Raise the problem in the discussion and tag relevant Engineering and Product managers.
 1. If a regression is found:
   * Create an issue for it
   * Add the severity label and the regression label
-  * Raise the regression in the discussion and tag relevant Engineering and Product managers. 
+  * Raise the regression in the discussion and tag relevant Engineering and Product managers.
 
 General Quality info can be found in the [Quality Handbook](https://about.gitlab.com/handbook/quality/).
 
@@ -59,40 +59,42 @@ After this deadline has passed, Release Managers will proceed with the canary an
 
 > **Note:** For Quality Engineers, run Gitlab QA on staging and post the results.
 
-Please post the results of the [gitlab-qa](https://gitlab.com/gitlab-org/gitlab-qa) automated QA tests below.
+- [ ] Make sure to export the following environment variables (you can find the
+  password and tokens under the `GitLab QA` and `GitLab QA - Access tokens` 1Password items)
 
-The credentials are in 1Password, look for `GitLab QA`.
-You'll also need to generate a personal access token for the `GitLab QA` user and
-save it in the `GITLAB_QA_ACCESS_TOKEN` environment variable below.
+  ```
+  › export GITLAB_USERNAME=gitlab-qa GITLAB_PASSWORD=xxx GITHUB_ACCESS_TOKEN=xxx
+  ```
 
-Export the following environment variables
+- [ ] Update `gitlab-qa` if needed
 
-```sh
-export GITLAB_USERNAME=gitlab-qa GITLAB_PASSWORD=xxx GITLAB_QA_ACCESS_TOKEN=xxx
-```
+  ```
+  › gem install gitlab-qa
+  ```
+- [ ] Automated QA completed. QA can be parallelized manually (for now):
 
-and run
+  ```
+  # Tab 1: This should take approximately 4.5 minutes
+  # Make sure to replace `11.1.0-rc4-ee` with the version exposed at http://staging.gitlab.com/help
 
-```sh
-gitlab-qa Test::Instance::Staging
-```
+  › gitlab-qa Test::Instance::Any gitlab-qa Test::Instance::Any dev.gitlab.org:5005/gitlab/omnibus-gitlab/gitlab-ee:11.1.0-rc4-ee https://staging.gitlab.com -- qa/specs/features/api/ qa/specs/features/login/ qa/specs/features/merge_request/
+  ```
 
-**Note:** Until https://gitlab.com/gitlab-org/gitlab-qa/issues/272 is resolved, you'll need to use the workaround described at https://gitlab.com/gitlab-org/gitlab-qa/issues/272#workaround. The workaround doesn't need a `GITLAB_QA_ACCESS_TOKEN` variable 
+  ```
+  # Tab 2: This should take approximately 6 minutes
+  # Make sure to replace `11.1.0-rc4-ee` with the version exposed at http://staging.gitlab.com/help
 
-```
-# Make sure to replace `v11.0.0-rc8-ee` with the version exposed at http://staging.gitlab.com/help
-# In gitlab-ee
-› git checkout v11.0.0-rc8-ee
-› cd qa
-› docker build -t gitlab/gitlab-ee-qa:11.0.0-rc8-ee .
-› gitlab-qa Test::Instance::Any gitlab/gitlab-ee:11.0.0-rc8-ee 11.0.0-rc8-ee https://staging.gitlab.com
-```
+  › gitlab-qa Test::Instance::Any dev.gitlab.org:5005/gitlab/omnibus-gitlab/gitlab-ee:11.1.0-rc4-ee https://staging.gitlab.com -- qa/specs/features/project/
+  ```
 
-```sh
-Post the result of the test run here.
-```
+  ```
+  # Tab 3: This should take approximately 5 minutes
+  # Make sure to replace `11.1.0-rc4-ee` with the version exposed at http://staging.gitlab.com/help
 
-If there are errors, create an "Automation Triage" issue, name it `Automation Triage RELEASE_MAJOR_VERSION RC#` and link it to this issue. 
-In the triage issue include all the detailed test logs and screenshots.
+  › gitlab-qa Test::Instance::Any dev.gitlab.org:5005/gitlab/omnibus-gitlab/gitlab-ee:11.1.0-rc4-ee https://staging.gitlab.com -- qa/specs/features/repository/
+  ```
+- [ ] Post results and failures logs + screenshots as comments of this issue
+- [ ] Create `Automation Triage RELEASE_MAJOR_VERSION RC#` issues for all the
+  automated QA failures and link it to this issue
 
 /label ~"QA task"
