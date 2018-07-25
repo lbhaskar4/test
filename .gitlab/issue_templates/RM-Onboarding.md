@@ -1,7 +1,7 @@
 ## On-Boarding
 
 Trainee: `your_username`
-Release Manager: Previous Release Manager in your timezone. See https://about.gitlab.com/release-managers/ for details
+Release Manager: Release Manager in your timezone. See https://about.gitlab.com/release-managers/ for details
 
 - [ ] Trainee: Assign yourself and the Release Manager to this issue.
 
