@@ -51,13 +51,35 @@ Take note of any issues you've created and check them off as they are resolved.
 
 ## Automated QA
 
-> **Note:** For Quality Engineers, for every release versions run Gitlab QA on staging and post the results.
+> **Note:** For Quality Engineers, for every release versions run Gitlab QA
+against the dedicated environment that runs the version and post the results.
 
+- (Optional) If the QA Docker image doesn't exist, you will need to build it
+manually on your machine, e.g.
+
+  ```shell
+  # In gitlab-ee
+  › git fetch dev
+  › git checkout vx.y.z-ee # Replace vx.y.z-ee with the actual tag
+  › cd qa
+  › docker build -t dev.gitlab.org:5005/gitlab/omnibus-gitlab/gitlab-ee-qa:x.y.z-ee .   
+  ```
 - [ ] Make sure to export the following environment variables (you can find the
   password and tokens under the `GitLab QA` and `GitLab QA - Access tokens` 1Password items)
-
+  * `<QA_IMAGE>` with the QA Image address, i.e.
+    `dev.gitlab.org:5005/gitlab/omnibus-gitlab/gitlab-ee-qa:x.y.z-ee`.
+  * `<QA_ENV_URL>` with the URL of the environment where the package has been
+    deployed (usually https://staging.gitlab.com for the current version, and
+    `http://IP_OF_THE_GCP_VM` for back-ported versions).
+  * `<ROOT_PASSWORD>` with the password you've set for the `root` user.
+  * `<GITHUB_ACCESS_TOKEN>` with a valid GitHub API token that can access the
+    `gitlab-qa/test-project` project.
   ```
-  › export GITLAB_USERNAME=gitlab-qa GITLAB_PASSWORD=xxx GITHUB_ACCESS_TOKEN=xxx
+  › export QA_IMAGE="<QA_IMAGE>"
+  › export QA_ENV_URL="<QA_ENV_URL>"
+  › export GITLAB_USERNAME=root
+  › export GITLAB_PASSWORD="<ROOT_PASSWORD>"
+  › export GITHUB_ACCESS_TOKEN="<GITHUB_ACCESS_TOKEN>"
   ```
 
 - [ ] Update `gitlab-qa` if needed
@@ -69,26 +91,24 @@ Take note of any issues you've created and check them off as they are resolved.
 
   ```
   # Tab 1: This should take approximately 4.5 minutes
-  # Make sure to replace `11.1.0-rc4-ee` with the version exposed at http://staging.gitlab.com/help
 
-  › gitlab-qa Test::Instance::Any gitlab-qa Test::Instance::Any dev.gitlab.org:5005/gitlab/omnibus-gitlab/gitlab-ee:11.1.0-rc4-ee https://staging.gitlab.com -- qa/specs/features/api/ qa/specs/features/login/ qa/specs/features/merge_request/
+  › gitlab-qa Test::Instance::Any $QA_IMAGE $QA_ENV_URL -- qa/specs/features/api/ qa/specs/features/login/ qa/specs/features/merge_request/
   ```
 
   ```
   # Tab 2: This should take approximately 6 minutes
-  # Make sure to replace `11.1.0-rc4-ee` with the version exposed at http://staging.gitlab.com/help
 
-  › gitlab-qa Test::Instance::Any dev.gitlab.org:5005/gitlab/omnibus-gitlab/gitlab-ee:11.1.0-rc4-ee https://staging.gitlab.com -- qa/specs/features/project/
+  › gitlab-qa Test::Instance::Any $QA_IMAGE $QA_ENV_URL -- qa/specs/features/project/
   ```
 
   ```
   # Tab 3: This should take approximately 5 minutes
-  # Make sure to replace `11.1.0-rc4-ee` with the version exposed at http://staging.gitlab.com/help
 
-  › gitlab-qa Test::Instance::Any dev.gitlab.org:5005/gitlab/omnibus-gitlab/gitlab-ee:11.1.0-rc4-ee https://staging.gitlab.com -- qa/specs/features/repository/
+  › gitlab-qa Test::Instance::Any $QA_IMAGE $QA_ENV_URL -- qa/specs/features/repository/
   ```
-- [ ] Post results and failures logs + screenshots as comments of this issue
+- [ ] Post results as comments of this issue
 - [ ] Create `Automation Triage RELEASE_MAJOR_VERSION RC#` issues for all the
-  automated QA failures and link it to this issue
+    automated QA failures (with failures logs + screenshots) and link it to this issue
 
-/label ~"QA task"
+/label ~"QA task" ~Quality
+/cc @gl-quality
