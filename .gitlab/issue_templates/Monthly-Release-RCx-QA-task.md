@@ -57,44 +57,21 @@ After this deadline has passed, Release Managers will proceed with the canary an
 
 ## Automated QA
 
-> **Note:** For Quality Engineers, run Gitlab QA on staging and post the results.
+If the last [`Daily staging QA` pipeline] was run for #{@version},
+you can just report the result in this issue.
 
-- [ ] Make sure to export the following environment variables (you can find the
-  password and tokens under the `GitLab QA` and `GitLab QA - Access tokens` 1Password items)
+Otherwise, start a new [`Daily staging QA` pipeline] by clicking the
+"Play" button and wait for the pipeline to finish.
 
-  ```
-  › export GITLAB_USERNAME=gitlab-qa GITLAB_PASSWORD=xxx GITHUB_ACCESS_TOKEN=xxx
-  ```
+```sh
+Post the result of the test run here.
+```
 
-- [ ] Update `gitlab-qa` if needed
+If there are errors, create a new issue for each failing job (you can
+use the "New issue" button from the job page itself), in the
+https://gitlab.com/gitlab-org/quality/staging project and mention
+the `@gl-quality` group.
 
-  ```
-  › gem install gitlab-qa
-  ```
-- [ ] Automated QA completed. QA can be parallelized manually (for now):
-
-  ```
-  # Tab 1: This should take approximately 4.5 minutes
-  # Make sure to replace `11.1.0-rc4-ee` with the version exposed at http://staging.gitlab.com/help
-
-  › gitlab-qa Test::Instance::Any gitlab-qa Test::Instance::Any dev.gitlab.org:5005/gitlab/omnibus-gitlab/gitlab-ee:11.1.0-rc4-ee https://staging.gitlab.com -- qa/specs/features/api/ qa/specs/features/login/ qa/specs/features/merge_request/
-  ```
-
-  ```
-  # Tab 2: This should take approximately 6 minutes
-  # Make sure to replace `11.1.0-rc4-ee` with the version exposed at http://staging.gitlab.com/help
-
-  › gitlab-qa Test::Instance::Any dev.gitlab.org:5005/gitlab/omnibus-gitlab/gitlab-ee:11.1.0-rc4-ee https://staging.gitlab.com -- qa/specs/features/project/
-  ```
-
-  ```
-  # Tab 3: This should take approximately 5 minutes
-  # Make sure to replace `11.1.0-rc4-ee` with the version exposed at http://staging.gitlab.com/help
-
-  › gitlab-qa Test::Instance::Any dev.gitlab.org:5005/gitlab/omnibus-gitlab/gitlab-ee:11.1.0-rc4-ee https://staging.gitlab.com -- qa/specs/features/repository/
-  ```
-- [ ] Post results and failures logs + screenshots as comments of this issue
-- [ ] Create `Automation Triage RELEASE_MAJOR_VERSION RC#` issues for all the
-  automated QA failures and link it to this issue
+[`Daily staging QA` pipeline]: https://gitlab.com/gitlab-org/quality/staging/pipeline_schedules
 
 /label ~"QA task"

@@ -62,7 +62,7 @@ manually on your machine, e.g.
   › git fetch dev
   › git checkout vx.y.z-ee # Replace vx.y.z-ee with the actual tag
   › cd qa
-  › docker build -t dev.gitlab.org:5005/gitlab/omnibus-gitlab/gitlab-ee-qa:x.y.z-ee .   
+  › docker build -t dev.gitlab.org:5005/gitlab/omnibus-gitlab/gitlab-ee-qa:x.y.z-ee .
   ```
 - [ ] Make sure to export the following environment variables (you can find the
   password and tokens under the `GitLab QA` and `GitLab QA - Access tokens` 1Password items)
