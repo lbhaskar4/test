@@ -56,6 +56,9 @@ YOUR_PUBLIC_KEY
 
 Trainee: Ensure you have completed all the steps on `Access Request` before doing this section.
 
+- [ ] Trainee: Follow instructions to set up [bastion access](https://gitlab.com/gitlab-com/runbooks/blob/master/howto/rm-bastion-access.md)
+  - [ ] Test gstg access by SSH'ing in to a staging node: `ssh sidekiq-besteffort-01-sv-gstg.c.gitlab-staging-1.internal`
+  - [ ] Test gprd access by SSH'ing in to a production node: `ssh sidekiq-besteffort-01-sv-gprd.c.gitlab-production.internal`
 - [ ] Trainee: Make sure you have [takeoff](https://gitlab.com/gitlab-org/takeoff) cloned locally, and [set it up](https://gitlab.com/gitlab-org/takeoff/#getting-started)
 - [ ] Trainee: Make sure you have [release-tools](https://gitlab.com/gitlab-org/release-tools) cloned locally, and [set it up](https://gitlab.com/gitlab-org/release-tools/blob/master/doc/rake-tasks.md#setup)
 - [ ] Trainee: If your ssh key has a passphrase, you will want to do `ssh-add` in your local takeoff repo
