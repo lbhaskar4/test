@@ -26,7 +26,7 @@ Each Product Manager then performs the Feature Assurance task to ensure that eac
   * Raise the problem in the discussion and tag relevant Engineers and Engineering managers. 
 1. Raise any release blockers to the Release Manager and to the Engineering Manager whose team is responsible for delivering the feature.
 
-General Quality info can be found in the [Quality Handbook](https://about.gitlab.com/handbook/quality/).
+General Quality info can be found in the [Quality Handbook](https://about.gitlab.com/handbook/engineering/quality/).
 
 ## Deadline
 
