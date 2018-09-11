@@ -36,7 +36,7 @@ Any item inside of () should be removed before the issue is closed.
 
 (Assign this issue to RMs managing this release. See https://about.gitlab.com/release-managers/)
 
-The release manager needs to provide initial approval for this exception
+A release manager (not a trainee) needs to provide initial approval for this exception
 request.
 
 - [ ] Release manager
