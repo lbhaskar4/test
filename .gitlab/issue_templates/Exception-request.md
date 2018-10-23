@@ -48,12 +48,12 @@ Mention others as necessary during discussion.
 Upon initial approval, the release manager will then ping and assign the
 following roles:
 
-- [ ] Engineering team leader
-- [ ] Engineering department leader (if different from team leader)
-- [ ] Quality leader
+- [ ] Engineering Manager 
+- [ ] Director of Engineering department (if different from Engineering Manager)
+- [ ] Engineering Manager, Quality
 
 If you are the last person to provide initial approval, assign this issue to the
-VPE for his approval:
+VPE for their approval:
 
 - [ ] VPE
 
@@ -62,7 +62,11 @@ VPE for his approval:
 Upon initial approval, the release manager will then ping and assign one more
 role for final approval:
 
-- [ ] Engineering team leader/Engineering department leader/Quality leader/VPE
+- [ ] One of:
+    - Engineering Manager
+    - Director of Engineering department
+    - Engineering Manager, Quality
+    - VPE
 
 ## After approval
 
