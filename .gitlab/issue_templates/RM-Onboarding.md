@@ -69,6 +69,7 @@ Trainee: Ensure you have completed all the steps on `Access Request` before doin
 ### First Tasks
 
 - [ ] Trainee: Join #releases on Slack
+- [ ] Trainee: Join #incident-management on Slack (incidents may be caused by recent deployment to production)
 - [ ] Trainee: Read through the [release guides](https://gitlab.com/gitlab-org/release/docs/blob/master/README.md)
 - [ ] Trainee: Read the deploy [docs](https://gitlab.com/gitlab-org/takeoff#deploying-gitlab)
 - [ ] Trainee: Be involved in the merge/pick to stable for at least one RC/Patch
